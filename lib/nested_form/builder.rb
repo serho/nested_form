@@ -2,7 +2,7 @@ require 'simple_form'
 module NestedForm
   class Builder < SimpleForm::FormBuilder
     def input(attribute_name, options = {}, &block)
-      options[:input_html].merge! :class => 'custom'
+      options[:input_html].merge! :class => 'custom' if options[:input_html]
       super
     end
     # Adds a link to insert a new associated records. The first argument is the name of the link, the second is the name of the association.
